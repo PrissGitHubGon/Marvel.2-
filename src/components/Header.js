@@ -58,38 +58,24 @@ function Header() {
             </div>
             <ul className="flex flex-col items-center justify-between min-h-[300px] text-black ">
               <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 uppercase">
-                <Link to="/home" onClick={closeSideBar}>
-                  Présentation
+                <Link to="/" onClick={closeSideBar}>
+                  Personnages
                 </Link>
               </li>
               <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 uppercase">
                 <Link to="/projets-formation" onClick={closeSideBar}>
-                  Portfolio de Formation
+                  Comics
                 </Link>
               </li>
               <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 uppercase">
                 <Link to="/projets-personnel" onClick={closeSideBar}>
-                  Portfolio de mes projets (En cours...)
+                  <i class="fas fa-user"></i>
                 </Link>
               </li>
               <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 uppercase">
                 <Link to="/competences" onClick={closeSideBar}>
-                  Compétences
+                  <i class="fas fa-user-edit"></i>
                 </Link>
-              </li>
-
-              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 uppercase">
-                <a
-                  onClick={closeSideBar}
-                  href="mailto:priscillia.g.pro@outlook.fr"
-                >
-                  Envoyer un Email
-                </a>
-              </li>
-              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 uppercase">
-                <a onClick={closeSideBar} href="tel:0672114122">
-                  Appelez moi 😃
-                </a>
               </li>
             </ul>
           </div>
@@ -97,30 +83,20 @@ function Header() {
 
         <ul className="DESKTOP-MENU hidden space-x-8 lg:flex mr-5 ">
           <li>
-            <Link to="/home">Présentation</Link>
+            <Link to="/">Personnages</Link>
           </li>
           <li>
-            {/* <Link to="/my-creations">Réalisations</Link> */}
-
-            <DropdownContact
-              titleHeader="Réalisations"
-              titleLink1="Projet de formation"
-              link1="projets-formation"
-              titleLink2="Projet personnel (En cours ...)"
-              link2="projets-personnel"
-            />
+            <Link to="/">Comics</Link>
           </li>
           <li>
-            <Link to="/competences">Compétences</Link>
+            <Link to="/competences">
+              <i class="fas fa-user"></i>
+            </Link>
           </li>
           <li>
-            <DropdownContact
-              titleHeader="Me contacter"
-              link1="mailto:priscillia.g.pro@outlook.fr"
-              titleLink1="Envoyer un Email"
-              link2="tel:0672114122"
-              titleLink2=" Appelez moi 😃"
-            />
+            <Link to="/competences">
+              <i class="fas fa-user-edit"></i>
+            </Link>
           </li>
         </ul>
       </nav>
