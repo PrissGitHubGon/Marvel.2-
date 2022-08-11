@@ -28,40 +28,46 @@ function Comics() {
       Load&nbsp;ng
     </span>
   ) : (
-    <section class="text-blueGray-700 bg-white mt-20">
-      {data.results.slice(0, 99)?.map((comics) => {
-        const imagePath = comics.thumbnail.path + "/portrait_uncanny.jpg"; // Variable permettant d'afficher une image contenant une clé path et clé extension
-        return (
-          <div
-            class="container flex flex-col items-center px-5 py-16 mx-auto  md:flex-row lg:px-28"
-            key={comics._id}
-          >
-            <div class="flex flex-col items-start w-full pt-0 mb-16 text-left  lg:flex-grow md:w-1/2 xl:mr-20 md:pr-24 md:mb-0">
-              <h1 class="mb-8 text-2xl font-black tracking-tighter text-black  md:text-5xl title-font">
-                {comics.title}
-              </h1>
-              <p class="mb-8 text-base leading-relaxed text-left text-blueGray-600">
-                {comics.description
-                  ? comics.description
-                  : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptate sed doloribus, tenetur porro veniam numquam,pariatur sapiente eius eos fugit possimus omnis. "}
-              </p>
-            </div>
-            <div class="w-full lg:w-5/6 lg:max-w-lg md:w-1/2">
-              <img
-                class="object-cover object-center rounded-lg"
-                alt="hero"
-                src={imagePath}
-              />
-            </div>
-          </div>
-        );
-      })}
-      <div className="paginate">
-        {" "}
-        <button onClick={() => setPage(page - 1)}>Page précédente</button>
-        <button onClick={() => setPage(page + 1)}>Page suivante</button>
+    <>
+      <div class="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 flex justify-center items-center py-20">
+        <div class="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
+          {data.results.slice(0, 99)?.map((comics) => {
+            const imagePath = comics.thumbnail.path + "/portrait_uncanny.jpg"; // Variable permettant d'afficher une image contenant une clé path et clé extension
+            return (
+              <div
+                class="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500"
+                key={comics._id}
+              >
+                <div class="relative">
+                  <img class="w-full rounded-xl" src={imagePath} alt="Colors" />
+                </div>
+                <h1 class="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">
+                  {comics.title}
+                </h1>
+                <div class="my-4">
+                  <div class="flex space-x-1 items-center">
+                    <p>
+                      {comics.description
+                        ? comics.description
+                        : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptate sed doloribus, tenetur porro veniam numquam,pariatur sapiente eius eos fugit possimus omnis. "}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </section>
+      <div className=" bg-gradient-to-r from-green-400 to-blue-500">
+        {" "}
+        <button onClick={() => setPage(page - 1)} className=" ml-10">
+          Page précédente
+        </button>
+        <button onClick={() => setPage(page + 1)} className=" ml-10">
+          Page suivante
+        </button>
+      </div>
+    </>
   );
 }
 

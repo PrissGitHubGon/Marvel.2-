@@ -59,7 +59,7 @@ function Header() {
             </div>
             <ul className="flex flex-col items-center justify-between min-h-[300px] text-black  text-2xl fontFamily">
               <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8">
-                <Link to="/" onClick={closeSideBar}>
+                <Link to="/characters" onClick={closeSideBar}>
                   Personnages
                 </Link>
               </li>
@@ -84,7 +84,7 @@ function Header() {
 
         <ul className="DESKTOP-MENU hidden space-x-8 lg:flex mr-7 text-4xl fontFamily">
           <li>
-            <Link to="/">Personnages</Link>
+            <Link to="/characters">Personnages</Link>
           </li>
           <li>
             <Link to="/comics">Comics</Link>
