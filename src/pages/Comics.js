@@ -56,6 +56,11 @@ function Comics() {
           </div>
         );
       })}
+      <div className="paginate">
+        {" "}
+        <button onClick={() => setPage(page - 1)}>Page précédente</button>
+        <button onClick={() => setPage(page + 1)}>Page suivante</button>
+      </div>
     </section>
   );
 }
