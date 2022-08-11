@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-import captainA from "../assets/img/captain-america-g7c018314b_640.png";
+import Hulk from "../assets/img/hulk-5959620_960_720.png";
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const handleIsOpen = () => {
@@ -15,7 +14,7 @@ function Header() {
     <div className="flex items-center justify-between py-6 pl-4 bg-gray-800 text-white bg-[url('https://res.cloudinary.com/dl6flp50k/image/upload/v1659953347/Marvel-Wallpaper-HD-41300_z2bvtd.jpg')]  bg-cover bg-center">
       <a href="/" className="ml-6  h-20 w-20">
         <svg
-          className="ml-6  h-28 w-28"
+          className="md:ml-6 h-20 w-20 md:h-28 md:w-28"
           enable-background="new -215.19 -86.608 1000 402.473"
           height="402.473"
           viewBox="-215.19 -86.608 1000 402.473"
@@ -34,8 +33,10 @@ function Header() {
             className="HAMBURGER-ICON space-y-2 cursor-pointer"
             onClick={() => handleIsOpen((prev) => !prev)}
           >
-            <img src={captainA} alt="" className="h-28 w-28" />
-            <p>Click here </p>
+            <img src={Hulk} alt="" className="h-28 w-28 " />
+            <p className="text-center border-2 border-white rounded-lg hover:bg-green-600 ">
+              Click here{" "}
+            </p>
           </div>
 
           <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
@@ -56,24 +57,24 @@ function Header() {
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </div>
-            <ul className="flex flex-col items-center justify-between min-h-[300px] text-black ">
-              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 uppercase">
+            <ul className="flex flex-col items-center justify-between min-h-[300px] text-black  text-2xl fontFamily">
+              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8">
                 <Link to="/" onClick={closeSideBar}>
                   Personnages
                 </Link>
               </li>
-              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 uppercase">
-                <Link to="/projets-formation" onClick={closeSideBar}>
+              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 ">
+                <Link to="/comics" onClick={closeSideBar}>
                   Comics
                 </Link>
               </li>
-              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 uppercase">
-                <Link to="/projets-personnel" onClick={closeSideBar}>
+              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 ">
+                <Link to="/" onClick={closeSideBar}>
                   <i class="fas fa-user"></i>
                 </Link>
               </li>
-              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 uppercase">
-                <Link to="/competences" onClick={closeSideBar}>
+              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 ">
+                <Link to="/" onClick={closeSideBar}>
                   <i class="fas fa-user-edit"></i>
                 </Link>
               </li>
@@ -81,44 +82,25 @@ function Header() {
           </div>
         </section>
 
-        <ul className="DESKTOP-MENU hidden space-x-8 lg:flex mr-5 ">
+        <ul className="DESKTOP-MENU hidden space-x-8 lg:flex mr-7 text-4xl fontFamily">
           <li>
             <Link to="/">Personnages</Link>
           </li>
           <li>
-            <Link to="/">Comics</Link>
+            <Link to="/comics">Comics</Link>
           </li>
           <li>
-            <Link to="/competences">
+            <Link to="/">
               <i class="fas fa-user"></i>
             </Link>
           </li>
           <li>
-            <Link to="/competences">
+            <Link to="/">
               <i class="fas fa-user-edit"></i>
             </Link>
           </li>
         </ul>
       </nav>
-      <style>{`
-        .hideMenuNav {
-          display: none;
-        }
-        .showMenuNav {
-          display: block;
-          position: absolute;
-          width: 100%;
-          
-          top: 0;
-          left: 0;
-          background: white;
-          z-index: 20;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          align-items: center;
-        }
-      `}</style>
     </div>
   );
 }

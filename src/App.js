@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //components
 import Header from "./components/Header";
+import Comics from "./pages/Comics";
 function App() {
   return (
     <Router>
       <div className="App">
         <Header />
         <Routes>
-          {/* <Route path="/" element={<Comics />} /> */}
+          <Route path="/comics" element={<Comics />} />
           <Route
             path="/user/register"
             // element={<Register setUser={setUser} />}
