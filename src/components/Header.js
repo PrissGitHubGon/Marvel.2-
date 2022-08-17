@@ -34,7 +34,7 @@ function Header() {
             onClick={() => handleIsOpen((prev) => !prev)}
           >
             <img src={Hulk} alt="" className="h-28 w-28 " />
-            <p className="text-center border-2 border-white rounded-lg hover:bg-green-600 ">
+            <p className="text-center border-2 border-white rounded-lg hover:bg-green-600 fontFamily">
               Click here{" "}
             </p>
           </div>

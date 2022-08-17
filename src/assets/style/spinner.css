@@ -1,76 +1,53 @@
-/*****************************************Spinner*****************************************/
-/* https://cssloaders.github.io/ */
-.loader {
-  color: rgb(16, 16, 16);
-  position: relative;
-  display: inline-block;
-  margin-top: 12%;
-  margin-left: 40%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 48px;
-  letter-spacing: 4px;
-  box-sizing: border-box;
-}
-.loader::before {
-  content: "";
-  position: absolute;
-  right: 70px;
-  bottom: 10px;
-  height: 28px;
-  width: 5.15px;
-  background: currentColor;
-  box-sizing: border-box;
-  animation: animloader1 1s linear infinite alternate;
-}
-.loader::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  left: 125px;
-  top: 2px;
+/* Source https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+
+.spinner-3 {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
   border-radius: 50%;
-  background: #7f130c;
-  box-sizing: border-box;
-  animation: animloader 1s linear infinite alternate;
+  background: #25b09b;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: s3 1s infinite linear;
 }
-
-@keyframes animloader {
-  0% {
-    transform: translate(0px, 0px) scaleX(1);
-  }
-  14% {
-    transform: translate(-12px, -16px) scaleX(1.05);
-  }
-  28% {
-    transform: translate(-27px, -28px) scaleX(1.07);
-  }
-  42% {
-    transform: translate(-46px, -35px) scaleX(1.1);
-  }
-  57% {
-    transform: translate(-70px, -37px) scaleX(1.1);
-  }
-  71% {
-    transform: translate(-94px, -32px) scaleX(1.07);
-  }
-  85% {
-    transform: translate(-111px, -22px) scaleX(1.05);
-  }
-  100% {
-    transform: translate(-125px, -9px) scaleX(1);
+@keyframes s3 {
+  to {
+    transform: rotate(1turn);
   }
 }
 
-@keyframes animloader1 {
-  0% {
-    box-shadow: 0 -6px, -122.9px -8px;
-  }
-  25%,
-  75% {
-    box-shadow: 0 0px, -122.9px -8px;
-  }
+/* ----------------------------------------------------------------------- */
+
+.continuous-4 {
+  width: 240px;
+  height: 44px;
+  border-radius: 40px;
+  color: #514b82;
+  border: 4px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.continuous-4::before {
+  content: "";
+  position: absolute;
+  margin: 4px;
+  width: 28px;
+  top: 0;
+  bottom: 0;
+  left: -40px;
+  border-radius: inherit;
+  background: currentColor;
+  box-shadow: -10px 0 12px 3px currentColor;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%, -30px 50%);
+  animation: ct4 1s infinite linear;
+}
+
+@keyframes ct4 {
   100% {
-    box-shadow: 0 0px, -122.9px -16px;
+    left: calc(100% + 20px);
   }
 }
