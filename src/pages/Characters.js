@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import Hulk from "../assets/img/hulk-5959620_960_720.png";
 import CardComponent from "../components/Card";
@@ -31,30 +30,6 @@ function Characters() {
     <Spinner />
   ) : (
     <>
-      {/* <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 flex justify-center items-center py-20">
-        <div className="flex flex-wrap w-full justify-center">
-          {data.results.slice(0, 18)?.map((character) => {
-            const id = character._id;
-            const imagePath =
-              character.thumbnail.path + "/portrait_uncanny.jpg";
-            return (
-              <Link to={`/character/${id}`}>
-                <CardComponent
-                  style={{
-                    backgroundImage: `url(${imagePath ? imagePath : Hulk})`,
-                  }}
-                  title={character.title}
-                  description={
-                    character.description
-                      ? character.description
-                      : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptate sed doloribus, tenetur porro veniam numquam,pariatur sapiente eius eos fugit possimus omnis. "
-                  }
-                />
-              </Link>
-            );
-          })}
-        </div>
-      </div> */}
       <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 flex justify-center items-center py-20">
         <div className="flex flex-wrap w-full justify-center">
           {" "}
