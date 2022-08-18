@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import Hulk from "../assets/img/hulk-5959620_960_720.png";
+import CardComponent from "../components/Card";
 import Spinner from "../components/Spinner";
 
 function Comics() {
@@ -34,29 +35,17 @@ function Comics() {
           {data.results.slice(0, 18)?.map((comics) => {
             const imagePath = comics.thumbnail.path + "/portrait_uncanny.jpg";
             return (
-              <div
+              <CardComponent
                 style={{
                   backgroundImage: `url(${imagePath ? imagePath : Hulk})`,
                 }}
-                class=" card   bg-cover bg-no-repeat bg-center relative overflow-hidden h-96  m-4 rounded-2xl max-w-xs w-full bg-slate-300"
-              >
-                <div class="card-body bg-black/75 absolute box-border w-full duration-1000 bottom-0 h-8">
-                  <div class="card-content p-8">
-                    <h2 class="card-title text-white text-xl">
-                      {comics.title}
-                    </h2>
-                    <p class="card-text text-white ">
-                      {comics.description
-                        ? comics.description
-                        : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptate sed doloribus, tenetur porro veniam numquam,pariatur sapiente eius eos fugit possimus omnis. "}
-                    </p>
-
-                    {/* <button className="bg-slate-300 text-teal-800 border-0 rounded-md p-2">
-                      Learn more{" "}
-                    </button> */}
-                  </div>
-                </div>
-              </div>
+                title={comics.title}
+                description={
+                  comics.description
+                    ? comics.description
+                    : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptate sed doloribus, tenetur porro veniam numquam,pariatur sapiente eius eos fugit possimus omnis. "
+                }
+              />
             );
           })}
         </div>

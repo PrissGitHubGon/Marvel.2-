@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import Hulk from "../assets/img/hulk-5959620_960_720.png";
+import CardComponent from "../components/Card";
 import Spinner from "../components/Spinner";
 
 function Characters() {
@@ -30,44 +31,52 @@ function Characters() {
     <Spinner />
   ) : (
     <>
-      <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 flex justify-center items-center py-20">
-        <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
+      {/* <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 flex justify-center items-center py-20">
+        <div className="flex flex-wrap w-full justify-center">
           {data.results.slice(0, 18)?.map((character) => {
             const id = character._id;
             const imagePath =
               character.thumbnail.path + "/portrait_uncanny.jpg";
             return (
               <Link to={`/character/${id}`}>
-                <div
-                  className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform md:hover:scale-105 transition duration-500 relative flex gap-4 overflow-hidden flex-wrap lg:py-12 py-4 sm:pb-72   md:pb-32 pb-44   place-content-center"
-                  key={character._id}
-                >
-                  <div className="relative">
-                    <img
-                      className="w-full rounded-xl"
-                      src={imagePath === undefined ? Hulk : imagePath}
-                      alt="Colors"
-                    />
-                  </div>
-                  <h1 className="mt-4 text-gray-800 text-3xl font-bold cursor-pointer fontFamily">
-                    {character.name}
-                  </h1>
-                  <div className="my-4">
-                    <div className="flex space-x-1 items-center">
-                      <p>
-                        {character.description
-                          ? character.description
-                          : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptate sed doloribus, tenetur porro veniam numquam,pariatur sapiente eius eos fugit possimus omnis. "}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-gradient-to-r from-emerald-700/75 to-teal-500/75 z-10 ">
-                    <h3 className="text-white text-4xl text-center fontFamily mt-96">
-                      Voir les comics liés au personnage
-                    </h3>
-                  </div>
-                </div>
+                <CardComponent
+                  style={{
+                    backgroundImage: `url(${imagePath ? imagePath : Hulk})`,
+                  }}
+                  title={character.title}
+                  description={
+                    character.description
+                      ? character.description
+                      : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptate sed doloribus, tenetur porro veniam numquam,pariatur sapiente eius eos fugit possimus omnis. "
+                  }
+                />
               </Link>
+            );
+          })}
+        </div>
+      </div> */}
+      <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 flex justify-center items-center py-20">
+        <div className="flex flex-wrap w-full justify-center">
+          {" "}
+          {data.results.slice(0, 18)?.map((character) => {
+            const id = character._id;
+            const imagePath =
+              character.thumbnail.path + "/portrait_uncanny.jpg";
+            return (
+              <CardComponent
+                style={{
+                  backgroundImage: `url(${imagePath ? imagePath : Hulk})`,
+                }}
+                title={character.name}
+                description={
+                  character.description
+                    ? character.description
+                    : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptate sed doloribus, tenetur porro veniam numquam,pariatur sapiente eius eos fugit possimus omnis. "
+                }
+                url={`/character/${id}`}
+                linkText="Voir les comics liés au personnage"
+                classNameButton="bg-teal-700 hover:bg-teal-500 border-0 rounded-md p-2 w-full mt-5"
+              />
             );
           })}
         </div>
