@@ -34,7 +34,7 @@ function Header() {
             onClick={() => handleIsOpen((prev) => !prev)}
           >
             <img src={firestar} alt="" className="h-28 w-28 " />
-            <p className="text-center border-2 border-white rounded-lg hover:bg-red-600 fontFamily">
+            <p className="text-center bg-red-600 border-2 border-white rounded-lg hover:bg-red-800 fontFamily">
               Click here{" "}
             </p>
           </div>
@@ -68,14 +68,16 @@ function Header() {
                   Comics
                 </Link>
               </li>
-              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 ">
+              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 text-center ">
                 <Link to="/login" onClick={closeSideBar}>
-                  <i class="fas fa-user"></i>
+                  <i class="fas fa-user "></i>
+                  <p>Connexion</p>
                 </Link>
               </li>
-              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 ">
+              <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 text-center">
                 <Link to="/registration" onClick={closeSideBar}>
                   <i class="fas fa-user-edit"></i>
+                  <p>Inscription</p>
                 </Link>
               </li>
             </ul>
