@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Hulk from "../assets/img/hulk-5959620_960_720.png";
+import firestar from "../assets/img/firestar-6205262_1280.png";
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const handleIsOpen = () => {
@@ -33,8 +33,8 @@ function Header() {
             className="HAMBURGER-ICON space-y-2 cursor-pointer"
             onClick={() => handleIsOpen((prev) => !prev)}
           >
-            <img src={Hulk} alt="" className="h-28 w-28 " />
-            <p className="text-center border-2 border-white rounded-lg hover:bg-green-600 fontFamily">
+            <img src={firestar} alt="" className="h-28 w-28 " />
+            <p className="text-center border-2 border-white rounded-lg hover:bg-red-600 fontFamily">
               Click here{" "}
             </p>
           </div>

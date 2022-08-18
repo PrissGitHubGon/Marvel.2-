@@ -1,0 +1,25 @@
+.card-body::before {
+  content: "Voir plus ...";
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 30%;
+  height: 32px;
+  padding: 0 0 0 8px;
+  transition: 1s;
+  border-radius: 0 0 15px 0;
+  background-color: #159a9c;
+}
+
+.card:hover .card-body {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.card:hover .card-body::before {
+  width: 80%;
+}
+
+.card-title {
+  text-decoration: underline #159a9c 20%;
+}
