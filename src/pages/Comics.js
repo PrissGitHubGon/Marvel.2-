@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
+import Hulk from "../assets/img/hulk-5959620_960_720.png";
 import Spinner from "../components/Spinner";
 
 function Comics() {
@@ -34,7 +35,9 @@ function Comics() {
             const imagePath = comics.thumbnail.path + "/portrait_uncanny.jpg";
             return (
               <div
-                style={{ backgroundImage: `url(${imagePath})` }}
+                style={{
+                  backgroundImage: `url(${imagePath ? imagePath : Hulk})`,
+                }}
                 class=" card   bg-cover bg-no-repeat bg-center relative overflow-hidden h-96  m-4 rounded-2xl max-w-xs w-full bg-slate-300"
               >
                 <div class="card-body bg-black/75 absolute box-border w-full duration-1000 bottom-0 h-8">
