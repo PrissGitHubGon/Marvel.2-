@@ -29,7 +29,7 @@ function CharactersId() {
     <Spinner />
   ) : (
     <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500">
-      <div class="flex justify-center pt-20 " key={params.characterId}>
+      <div class="flex justify-center md:pt-20 " key={params.characterId}>
         <div class="flex flex-col md:flex-row md:max-w-1xl rounded-lg bg-white shadow-lg">
           <img
             class=" w-full h-96 md:h-auto object-cover md:w-96 rounded-t-lg md:rounded-none md:rounded-l-lg"
