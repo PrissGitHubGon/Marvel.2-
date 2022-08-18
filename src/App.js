@@ -8,6 +8,8 @@ import Comics from "./pages/Comics";
 import Characters from "./pages/Characters";
 import CharactersId from "./pages/Characters-id";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 function App() {
   return (
     <Router>
@@ -18,6 +20,8 @@ function App() {
           <Route path="/comics" element={<Comics />} />
           <Route path="/characters" element={<Characters />} />
           <Route path="/character/:characterId" element={<CharactersId />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/registration" element={<Register />} />
         </Routes>
       </div>
     </Router>

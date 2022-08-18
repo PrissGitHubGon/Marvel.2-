@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
-import Hulk from "../assets/img/hulk-5959620_960_720.png";
 import Spinner from "../components/Spinner";
 
 function Comics() {
@@ -29,31 +28,29 @@ function Comics() {
   ) : (
     <>
       <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 flex justify-center items-center py-20">
-        <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
+        <div className="flex flex-wrap w-full justify-center">
+          {" "}
           {data.results.slice(0, 18)?.map((comics) => {
-            const imagePath = comics.thumbnail.path + "/portrait_uncanny.jpg"; // Variable permettant d'afficher une image contenant une clé path et clé extension
+            const imagePath = comics.thumbnail.path + "/portrait_uncanny.jpg";
             return (
               <div
-                className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform md:hover:scale-105 transition duration-500"
-                key={comics._id}
+                style={{ backgroundImage: `url(${imagePath})` }}
+                class=" card   bg-cover bg-no-repeat bg-center relative overflow-hidden h-96  m-4 rounded-2xl max-w-xs w-full bg-slate-300"
               >
-                <div className="relative">
-                  <img
-                    className="w-full rounded-xl"
-                    src={imagePath ? imagePath : Hulk}
-                    alt="Colors"
-                  />
-                </div>
-                <h1 className="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">
-                  {comics.title}
-                </h1>
-                <div className="my-4">
-                  <div className="flex space-x-1 items-center">
-                    <p>
+                <div class="card-body bg-black/75 absolute box-border w-full duration-1000 bottom-0 h-8">
+                  <div class="card-content p-8">
+                    <h2 class="card-title text-white text-xl">
+                      {comics.title}
+                    </h2>
+                    <p class="card-text text-white ">
                       {comics.description
                         ? comics.description
                         : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptate sed doloribus, tenetur porro veniam numquam,pariatur sapiente eius eos fugit possimus omnis. "}
                     </p>
+
+                    {/* <button className="bg-slate-300 text-teal-800 border-0 rounded-md p-2">
+                      Learn more{" "}
+                    </button> */}
                   </div>
                 </div>
               </div>

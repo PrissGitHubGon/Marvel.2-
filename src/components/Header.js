@@ -69,12 +69,12 @@ function Header() {
                 </Link>
               </li>
               <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 ">
-                <Link to="/" onClick={closeSideBar}>
+                <Link to="/login" onClick={closeSideBar}>
                   <i class="fas fa-user"></i>
                 </Link>
               </li>
               <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 ">
-                <Link to="/" onClick={closeSideBar}>
+                <Link to="/registration" onClick={closeSideBar}>
                   <i class="fas fa-user-edit"></i>
                 </Link>
               </li>
@@ -90,12 +90,12 @@ function Header() {
             <Link to="/comics">Comics</Link>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/login">
               <i class="fas fa-user"></i>
             </Link>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/registration">
               <i class="fas fa-user-edit"></i>
             </Link>
           </li>
