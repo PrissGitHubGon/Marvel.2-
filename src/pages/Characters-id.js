@@ -41,7 +41,7 @@ function CharactersId() {
               {data.name}
             </h5>
             <div class="text-gray-700 text-base mb-4">
-              <ul className="detail overflow-y-auto h-80 w-80 ">
+              <ul className="detail overflow-y-auto h-80 lg:w-80 ">
                 {data.comics.map((comic, index) => {
                   return (
                     <li key={index}>
