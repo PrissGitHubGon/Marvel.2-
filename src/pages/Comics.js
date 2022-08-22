@@ -16,12 +16,12 @@ function Comics() {
 
   useEffect(() => {
     const callServer = async () => {
-      const skip = page * 100;
+      // const skip = page * 100;
 
-      let nameComics = "";
-      if (searchComics) {
-        nameComics = `&title=${searchComics}`;
-      }
+      // let nameComics = "";
+      // if (searchComics) {
+      //   nameComics = `&title=${searchComics}`;
+      // }
 
       const response = await axios.get(
         // `https://marvel-students.herokuapp.com/comics?&skip=${skip}${nameComics}` // ${nameComics} (à rajouter lors de la mise en place de la search barre)
