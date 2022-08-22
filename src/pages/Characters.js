@@ -9,7 +9,6 @@ function Characters() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
-  // const [input, setInput] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +26,7 @@ function Characters() {
   }, [page]);
 
   return isLoading === true ? (
-    <Spinner />
+    <Spinner title="axiosError-repair in progress " />
   ) : (
     <>
       <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 flex justify-center items-center py-20">

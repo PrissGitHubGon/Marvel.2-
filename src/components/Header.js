@@ -1,7 +1,11 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
+import Cookies from "js-cookie";
 import firestar from "../assets/img/firestar-6205262_1280.png";
-function Header() {
+function Header(props) {
+  const { bearerToken, bearerPresent, setBearerPresent } = props;
+
   const [isNavOpen, setIsNavOpen] = useState(false);
   const handleIsOpen = () => {
     setIsNavOpen(!isNavOpen);
@@ -75,7 +79,7 @@ function Header() {
                 </Link>
               </li>
               <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 text-center">
-                <Link to="/registration" onClick={closeSideBar}>
+                <Link to="/signup" onClick={closeSideBar}>
                   <i class="fas fa-user-edit"></i>
                   <p>Inscription</p>
                 </Link>
@@ -83,25 +87,38 @@ function Header() {
             </ul>
           </div>
         </section>
-
-        <ul className="DESKTOP-MENU hidden space-x-8 lg:flex mr-7 text-4xl fontFamily">
-          <li>
-            <Link to="/characters">Personnages</Link>
-          </li>
-          <li>
-            <Link to="/comics">Comics</Link>
-          </li>
-          <li>
-            <Link to="/login">
-              <i class="fas fa-user"></i>
-            </Link>
-          </li>
-          <li>
-            <Link to="/registration">
-              <i class="fas fa-user-edit"></i>
-            </Link>
-          </li>
-        </ul>
+        {bearerToken ? (
+          <div className="Nav__user__buttons">
+            <button
+              className="Nav__user__buttons__disconnect"
+              onClick={() => {
+                Cookies.remove("bearerToken");
+                setBearerPresent(!bearerPresent);
+              }}
+            >
+              Disconect
+            </button>
+          </div>
+        ) : (
+          <ul className="DESKTOP-MENU hidden space-x-8 lg:flex mr-7 text-4xl fontFamily">
+            <li>
+              <Link to="/characters">Personnages</Link>
+            </li>
+            <li>
+              <Link to="/comics">Comics</Link>
+            </li>
+            <li>
+              <Link to="/login">
+                <i class="fas fa-user"></i>
+              </Link>
+            </li>
+            <li>
+              <Link to="/signup">
+                <i class="fas fa-user-edit"></i>
+              </Link>
+            </li>
+          </ul>
+        )}
       </nav>
     </div>
   );
