@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import Cookies from "js-cookie";
 import firestar from "../assets/img/firestar-6205262_1280.png";
-function Header(props) {
-  const { bearerToken, bearerPresent, setBearerPresent } = props;
-
+function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const handleIsOpen = () => {
     setIsNavOpen(!isNavOpen);
@@ -19,7 +16,8 @@ function Header(props) {
       <a href="/" className="ml-6  h-20 w-20">
         <svg
           className="md:ml-6 h-20 w-20 md:h-28 md:w-28"
-          enable-background="new -215.19 -86.608 1000 402.473"
+          enableBackground="new -215.19 -86.608 1000 402.473"
+          // enable-background="new -215.19 -86.608 1000 402.473"
           height="402.473"
           viewBox="-215.19 -86.608 1000 402.473"
           xmlns="http://www.w3.org/2000/svg"
@@ -74,51 +72,38 @@ function Header(props) {
               </li>
               <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 text-center ">
                 <Link to="/login" onClick={closeSideBar}>
-                  <i class="fas fa-user "></i>
+                  <i className="fas fa-user "></i>
                   <p>Connexion</p>
                 </Link>
               </li>
               <li className="border-b-2 border-fuchsia-900 sm:border-fuchsia-600  sm:hover:border-fuchsia-800 my-8 text-center">
                 <Link to="/signup" onClick={closeSideBar}>
-                  <i class="fas fa-user-edit"></i>
+                  <i className="fas fa-user-edit"></i>
                   <p>Inscription</p>
                 </Link>
               </li>
             </ul>
           </div>
         </section>
-        {bearerToken ? (
-          <div className="Nav__user__buttons">
-            <button
-              className="Nav__user__buttons__disconnect"
-              onClick={() => {
-                Cookies.remove("bearerToken");
-                setBearerPresent(!bearerPresent);
-              }}
-            >
-              Disconect
-            </button>
-          </div>
-        ) : (
-          <ul className="DESKTOP-MENU hidden space-x-8 lg:flex mr-7 text-4xl fontFamily">
-            <li>
-              <Link to="/characters">Personnages</Link>
-            </li>
-            <li>
-              <Link to="/comics">Comics</Link>
-            </li>
-            <li>
-              <Link to="/login">
-                <i class="fas fa-user"></i>
-              </Link>
-            </li>
-            <li>
-              <Link to="/signup">
-                <i class="fas fa-user-edit"></i>
-              </Link>
-            </li>
-          </ul>
-        )}
+
+        <ul className="DESKTOP-MENU hidden space-x-8 lg:flex mr-7 text-4xl fontFamily">
+          <li>
+            <Link to="/characters">Personnages</Link>
+          </li>
+          <li>
+            <Link to="/comics">Comics</Link>
+          </li>
+          <li>
+            <Link to="/login">
+              <i className="fas fa-user"></i>
+            </Link>
+          </li>
+          <li>
+            <Link to="/signup">
+              <i className="fas fa-user-edit"></i>
+            </Link>
+          </li>
+        </ul>
       </nav>
     </div>
   );
