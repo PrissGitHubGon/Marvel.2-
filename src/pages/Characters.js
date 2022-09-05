@@ -5,7 +5,7 @@ import Hulk from "../assets/img/hulk-5959620_960_720.png";
 import CardComponent from "../components/Card";
 // import Spinner from "../components/Spinner";
 //********************************************* */
-// En attendant la réparation de l'erreur CORS
+// En attendant la réparation de l'erreur CORS --- blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 import characters from "../assets/data/characters.json";
 //********************************************* */
 

@@ -7,7 +7,7 @@ import CardComponent from "../components/Card";
 // import Spinner from "../components/Spinner";
 
 //********************************************* */
-// En attendant la réparation de l'erreur CORS
+// En attendant la réparation de l'erreur CORS --- blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 import comics from "../assets/data/comics.json";
 //********************************************* */
 
