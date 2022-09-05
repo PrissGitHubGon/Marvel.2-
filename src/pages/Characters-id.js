@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
+const apiKey = process.env.API_KEY;
 function CharactersId() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +14,7 @@ function CharactersId() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://marvel-students.herokuapp.com/character/${params.characterId}`
+          `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${apiKey}`
         );
         console.log(params.characterId);
         setData(response.data);
