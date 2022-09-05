@@ -20,6 +20,7 @@ function Home() {
         <img src={Captain} alt="Captain" className="h-80  " />
         <p className="text-center text-4xl fontFamily text-white">Comics</p>
       </a>
+      {/* ************************************************************************************************ */}
     </div>
   );
 }

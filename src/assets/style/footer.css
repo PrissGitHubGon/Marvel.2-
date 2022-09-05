@@ -1,0 +1,21 @@
+.footer-body::before {
+  content: "🖱";
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 2.6%;
+  height: 32px;
+  padding: 0 0 0 8px;
+  transition: 1s;
+  border-radius: 0 0 15px 0;
+  background-color: #159a9c;
+}
+
+.footer:hover .footer-body {
+  height: 100%;
+}
+
+.footer:hover .footer-body::before {
+  width: 8%;
+  content: "Contact";
+}
