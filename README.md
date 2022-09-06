@@ -43,7 +43,7 @@ BACK-END
 ### Installation
 
 1. Clone the repo
-* ``git clone https://github.com/PrissGitHubGon/marvel-frontend.git``
+* ``https://github.com/PrissGitHubGon/Marvel.2-.git``
 2. Install "Yarn" package
 * ``yarn add``
 3. Lancer le projet
