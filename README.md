@@ -1,71 +1,50 @@
-# Getting Started with Create React App
+# Marvel
+## 3️⃣ Projet
+Lors de mes 10 semaines de Bootcamp dans l'école de formation "Le Reacteur", j'ai eu comme Test technique  la réalisation du site Marvel.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Lors de cet excercice je devais : 
+* Créez un site en React (avec un routeur) qui contiendrait en haut : le logo MARVEL et un menu (personnages, comics, favoris).
+* Sur la page principale « personnages », je devais faire apparaître la liste des personnages MARVEL (100 par page), sous forme de fiche (photo, nom, description). En cliquant sur chaque fiche, il doit être possible d’accéder à une page regroupant les comics liés au personnage.
+* Sur la page « comics », je devais faire apparaître la liste des comics MARVEL,par ordre alphabétique, sous forme de fiche (photo, titre, description).
 
-## Available Scripts
+### Modification à venir
 
-In the project directory, you can run:
+*  ❗❗ Réparer l'erreur : blocked by CORS policy: No 'Access-Control-Allow-Origin' - afin d'utiliser la bonne API .
+* Intégrer un moteur de recherche, afin de rechercher par nom/titre
+* Créer un système permettant de mettre chaque fiche en favoris, en fonction des souhaits de l’utilisateur.
+* Créez un système d’authentification par email et mot de passe.
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Lien vers le site
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+https://marvel-student-lereacteur.netlify.app/
 
-### `yarn test`
+### Preview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://user-images.githubusercontent.com/87413559/188663469-15a7f93b-014c-408d-84c0-3936c8993ff5.png)
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Construit avec
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+FRONT-END
 
-### `yarn eject`
+* create-react-app
+* HTML / SCSS
+* yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+BACK-END
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* 2 fichiers json en attendant de réparer l'erreur : blocked by CORS policy: No 'Access-Control-Allow-Origin'
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Commencer à travailler
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# Marvel.2-" 
+1. Clone the repo
+* ``git clone https://github.com/PrissGitHubGon/marvel-frontend.git``
+2. Install "Yarn" package
+* ``yarn add``
+3. Lancer le projet
+* ``yarn start``
